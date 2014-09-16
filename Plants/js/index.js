@@ -1,6 +1,11 @@
 $(document).ready(function(){
 	$('#search').click(function() {
 		var keyword = $('#searchKeyword').val();
+		
+		if (keyword === ''){
+			alert('검색어를 입력해 주세요.');
+			return;
+		}
 		window.location.href = "./view/search_list.html?keyword=" + keyword;
 	});
 	

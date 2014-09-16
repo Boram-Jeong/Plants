@@ -1,5 +1,8 @@
 $(document).ready(function() {
 	console.log('onload');
+	
+	var searchList;
+	var selectedIndex;
 
 	var keyword = location.search.split('keyword=')[1];
 	
@@ -9,12 +12,23 @@ $(document).ready(function() {
 		type : 'get',
 		dataType : 'json',
 		success : function(result) {
+			searchList = result;
 			 for(var idx=0; idx<result.length; idx++) {
-				 $('#searchList').append('<li class=\"list-group-item\">'+result[idx].name+'</li>');
+				 $('#searchList').append('<a href="#" class="list-group-item">'+result[idx].name+'</a>');
 			 }
 		},
 		error : function(e) {
 			console.log(e.responseText);
 		}
+	});
+	
+	$('#searchList').click(function(e) {
+		var name = e.target.text;
+		
+		for(var idx=0; idx<searchList.length; idx++) {
+			if(name === searchList[idx].name){
+				selectedIndex = idx;
+			}
+		 }
 	});
 });
