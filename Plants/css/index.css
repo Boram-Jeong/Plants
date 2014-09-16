@@ -8,8 +8,12 @@ body {
 	height: 100%;
 }
 
-page {
+#page {
 	height: 100% !important;
+}
+
+#contents {
+	height: 100%;
 }
 
 #searchForm {
@@ -26,7 +30,7 @@ page {
 	text-align: center;
 }
 
-#map-canvas {
+#map_canvas {
 	height: 100%;
 	margin: 0px;
 	padding: 0px
