@@ -8,10 +8,12 @@ $(document).ready(function(){
 		localStorage.setItem("favorite2", favorite2);
 		localStorage.setItem("favorite3", favorite3);
 		localStorage.setItem("favorite4", favorite4);
-		window.location.href = "../view/change_category.html";
+		window.location.href = "../index.html";
+		alert("저장하였습니다");
 	});
-	$('#cancle_favorite').click(function() {
-		window.location.href = "../view/option.html"
+	$('#cancle_favorite').click(function(e) {
+		 e.preventDefault();
+		 history.back(1);
 	});
 });
 
