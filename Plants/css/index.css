@@ -44,3 +44,13 @@ body {
 	z-index: 1;
 	float: right;
 }
+
+#header #title {
+	margin-left: 34px;
+}
+
+#header span {
+	float: right;
+	margin-top: 10px;
+	margin-right: 10px;
+}
