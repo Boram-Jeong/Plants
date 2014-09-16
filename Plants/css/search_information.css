@@ -43,7 +43,7 @@
    width: 100%;
    padding: 7px;
 }
-#write_space {
+#seedText {
    width: 80%;
    height: 3em;
    resize: none;
@@ -51,6 +51,7 @@
    margin-left: 5px;
    margin-right: 5px;
 }
+
 .clearfix:after
 {
    content: '';
