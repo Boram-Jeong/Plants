@@ -23,7 +23,8 @@
    float:left;
    width: 100%;
    height: 272px;
-   background-color: #0000e6;
+   background-color: #eeeeee;
+   overflow: auto;
 }
 .review {
    margin: 5px;
