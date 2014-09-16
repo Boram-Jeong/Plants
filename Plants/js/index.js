@@ -162,10 +162,6 @@
 		window.location.href = "./view/search_list.html?keyword=" + keyword;
 	});
 	
-	$('#nextPage').click(function() {
-		window.location.href = "./view/search_information.html";
-	});
-	
 	$('#category_page').click(function() {
 		window.location.href = "../view/change_category.html";
 	});
