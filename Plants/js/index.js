@@ -8,6 +8,10 @@ $(document).ready(function(){
 		window.location.href = "./view/search_information.html";
 	});
 	
+	$('#change_page').click(function() {
+		window.location.href = "./view/change_category.html";
+	});
+	
 	var map;
 	function initialize() {
 	  var mapOptions = {

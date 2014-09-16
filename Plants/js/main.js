@@ -2,12 +2,33 @@ var backEventListener = null;
 
 var unregister = function() {
     if ( backEventListener !== null ) {
-        document.removeEventListener( 'tizenhwkey', backEventListener );
-        backEventListener = null;
-        window.tizen.application.getCurrentApplication().exit();
-    }
+       document.removeEventListener( 'tizenhwkey', backEventListener );
+       backEventListener = null;
+     window.tizen.application.getCurrentApplication().exit();
+ }
 }
-
+    document.addListener('tizenhwkey', function(button) {
+    	switch(e.keyName)
+    	        {
+    	            case 'back':
+    	            	$.mobile.back();
+    	                switch($.mobile.activePage)
+    	                {
+    	                    case 'one': // use your first page or another page where the application should close if the use press back
+    	                    	$.mobile.back();
+    	                    		tizen.application.getCurrentApplication().exit();
+    	                        break;
+    	                    default: // if no case available, the back button returns back to previous page
+    	                        $.mobile.back();
+    	                }
+    	                break;
+    	            case 'menu':
+    	                // TODO: write a code for pressing menu button
+    	                break;
+    	        }
+    	});
+ 
+    
 //Initialize function
 var init = function () {
     // register once
@@ -17,22 +38,34 @@ var init = function () {
     
     // TODO:: Do your initialization job
     console.log("init() called");
-    
+  
+    $(window).on("tizenhwkey", function(ev) 
+    		{
+    		   if (ev.originalEvent.keyName === "back") 
+    		   {
+    			   
+    			   $.mobile.back();
+    		      /* Call window.history.back() to go to previous browser window */
+    		      /* or add script to add another behavior */
+    		   }
+    		})
+   
+ 
     var backEvent = function(e) {
-        if ( e.keyName == "back" ) {
-            try {
+       if ( e.keyName == "back" ) {
+          try {
                 if ( $.mobile.urlHistory.activeIndex <= 0 ) {
                     // if first page, terminate app
-                    unregister();
+                   unregister();
                 } else {
                     // move previous page
                     $.mobile.urlHistory.activeIndex -= 1;
                     $.mobile.urlHistory.clearForward();
                     window.history.back();
-                }
-            } catch( ex ) {
+              }
+           } catch( ex ) {
                 unregister();
-            }
+           }
         }
     }
     
