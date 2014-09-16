@@ -12,7 +12,7 @@ function loadSeeds(id) {
 			console.log(result);
 			for ( var idx = 0; idx < result.length; idx++) {
 				$('#review_contents').append(
-						'<a href="#" class="list-group-item">'
+						'<a href="#" class="list-group-item"><span class="glyphicon glyphicon-leaf" id="leaf_icon"></span>'
 								+ result[idx].text + '<span class="badge">'
 								+ result[idx].rate + '</span></a>');
 			}
