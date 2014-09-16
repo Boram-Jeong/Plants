@@ -9,29 +9,26 @@
 
 <title>Tizen Web IDE - Tizen - jQuery Mobile - Single-Page</title>
 
-<script type="text/javascript" src="./js/jquery-1.9.1.js"></script>
-<script type="text/javascript" src="./js/main.js"></script>
-
-<link rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
 
 <link rel="stylesheet" href="../libs/css/bootstrap.min.css" />
 <script type="text/javascript" src="../libs/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="../css/style.css" />
+
+<script type="text/javascript" src="../js/search_list.js"></script>
 </head>
 
 <body>
-	<div data-role="page">
-		<div data-role="header" data-position="fixed" data-tap-toggle="false">
-			<h1>Plant</h1>
+	<div id="page">
+		<div id="header">
+			<p id="title">Plant</p>
 		</div>
 		<!-- /header -->
 
-		<div data-role="content">
-			<ul class="list-group">
-				<li class="list-group-item">Cras justo odio</li>
-				<li class="list-group-item">Dapibus ac facilisis in</li>
-				<li class="list-group-item">Morbi leo risus</li>
-				<li class="list-group-item">Porta ac consectetur ac</li>
-				<li class="list-group-item">Vestibulum at eros</li>
+		<div id="content">
+			<ul class="list-group" id="searchList">
 			</ul>
 		</div>
 		<!-- /content -->
