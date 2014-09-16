@@ -13,10 +13,15 @@ $(document).ready(function(){
 		window.location.href = "./view/search_information.html";
 	});
 	
-	$('#change_page').click(function() {
-		window.location.href = "./view/change_category.html";
+	$('#category_page').click(function() {
+		window.location.href = "../view/change_category.html";
 	});
-	
+	$('#change_mainPage').click(function() {
+		window.location.href = "../index.html";
+	});
+	$('#option_page').click(function() {
+		window.location.href = "./view/option.html";
+	});
 	var map;
 	function initialize() {
 	  var mapOptions = {
