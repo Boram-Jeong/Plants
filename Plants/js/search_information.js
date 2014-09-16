@@ -5,12 +5,13 @@ $(document).ready(function() {
 	console.log(parameter);
 	
 	var id = parameter[0].split('=')[1];
-	var name = parameter[1].split('=')[1];
-	var address = parameter[5].split('=')[1];
+	var name = decodeURI(parameter[1].split('=')[1]);
+	var address = decodeURI(parameter[5].split('=')[1]);
 	var rate = parameter[6].split('=')[1];
 	
-	$('#cafe_information').innerHTML = name + "<br>" + address;
-	
+	$('#cafe_information').append(name+'<br>');
+	$('#cafe_information').append(address+'<br>');
+	$('#cafe_information').append(rate);
 	
 	$('#writeSeed').click(function() {
 //		console.log($('#seedText').val());
