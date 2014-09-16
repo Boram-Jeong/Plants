@@ -1,4 +1,17 @@
 $(document).ready(function() {
+	
+	var parameters = location.search.split('?')[1];
+	var parameter = parameters.split('&');
+	console.log(parameter);
+	
+	var id = parameter[0].split('=')[1];
+	var name = parameter[1].split('=')[1];
+	var address = parameter[5].split('=')[1];
+	var rate = parameter[6].split('=')[1];
+	
+	$('#cafe_information').innerHTML = name + "<br>" + address;
+	
+	
 	$('#writeSeed').click(function() {
 //		console.log($('#seedText').val());
 		var seedText = $('#seedText').val();
@@ -8,11 +21,11 @@ $(document).ready(function() {
 			return;
 		}
 		
-		var url = 'http://210.118.74.119:8080//hackathon/writeSeed.do';
+		var url = 'http://210.118.74.119:8080/hackathon/writeSeed.do';
 		$.ajax({
 			url : url,
 			type : 'post',
-			data : {id: '1', text: seedText, rate: '3.0'},
+			data : {id: id, text: seedText, rate: '3.0'},
 			dataType : 'json',
 			success : function(result) {
 				if(result===200){
