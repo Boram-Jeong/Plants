@@ -9,7 +9,7 @@ $(document)
 					var keyword = location.search.split('keyword=')[1];
 
 					var url = 'http://210.118.74.119:8080/hackathon/getSearchList.do?keyword='
-							+ keyword;
+							+ keyword + '&lat=37.508952&lng=127.061016';
 					$.ajax({
 						url : url,
 						type : 'get',
