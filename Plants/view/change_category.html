@@ -16,14 +16,14 @@
 <link rel="stylesheet" href="../libs/css/bootstrap.min.css" />
 <script type="text/javascript" src="../libs/js/bootstrap.min.js"></script>
 
-<link rel="stylesheet" href="css/index.css" />
+<link rel="stylesheet" href="../css/index.css" />
 
 
 <script type="text/javascript" src="../js/change_category.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 </head>
 
-<body>
+<body onload="set_favorite()">
 	<div id="page">
 		<div id="header">
 			<p id="title">Plants</p>
@@ -35,7 +35,7 @@
 				<label for="exampleInputEmail1">즐겨찾기1</label> <select
 					class="form-control" id="favorite1">
 					<option>없음</option>
-					<option>현금지급기</option>
+					<option selected="selected">현금지급기</option>
 					<option>베이커리</option>
 					<option>은행</option>
 					<option>바(bar)</option>
@@ -66,7 +66,7 @@
 					class="form-control" id="favorite2">
 					<option>없음</option>
 					<option>현금지급기</option>
-					<option>베이커리</option>
+					<option selected="selected">베이커리</option>
 					<option>은행</option>
 					<option>바(bar)</option>
 					<option>카페</option>
@@ -96,7 +96,7 @@
 					<option>없음</option>
 					<option>현금지급기</option>
 					<option>베이커리</option>
-					<option>은행</option>
+					<option selected="selected">은행</option>
 					<option>바(bar)</option>
 					<option>카페</option>
 					<option>옷가게</option>
@@ -126,7 +126,7 @@
 					<option>현금지급기</option>
 					<option>베이커리</option>
 					<option>은행</option>
-					<option>바(bar)</option>
+					<option selected="selected">바(bar)</option>
 					<option>카페</option>
 					<option>옷가게</option>
 					<option>편의점</option>
@@ -150,7 +150,7 @@
 			</div>
 
 			<button type="button" class="btn btn-default" id="save_favorite">저장</button>
-			<button type="button" class="btn btn-default" id="change_mainPage">취소</button>
+			<button type="button" class="btn btn-default" id="cancle_favorite">취소</button>
 		</form>
 
 		<!-- /content -->
