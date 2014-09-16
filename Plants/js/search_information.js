@@ -24,7 +24,8 @@ function loadSeeds(id) {
 }
 
 $(document).ready(function() {
-
+	
+	
 	var parameters = location.search.split('?')[1];
 	var parameter = parameters.split('&');
 	console.log(parameter);
@@ -34,12 +35,21 @@ $(document).ready(function() {
 	var address = decodeURI(parameter[5].split('=')[1]);
 	var rate = parameter[6].split('=')[1];
 
+	var seedRate;
+	
 	$('#cafe_information').append(name + '<br>');
 	$('#cafe_information').append(address + '<br>');
 	$('#cafe_information').append(rate);
 
 	loadSeeds(id);
-
+	
+	$(function(){
+	    $('#seedRate').on('change', function(){
+//	      alert("Changed: " + $(this).val())
+	      seedRate = $(this).val();
+	    });
+	  });
+	
 	$('#writeSeed').click(function() {
 		// console.log($('#seedText').val());
 		var seedText = $('#seedText').val();
@@ -56,13 +66,14 @@ $(document).ready(function() {
 			data : {
 				id : id,
 				text : seedText,
-				rate : '3.0'
+				rate : seedRate
 			},
 			dataType : 'json',
 			success : function(result) {
 				if (result === 200) {
 					alert("시드 남기기에 성공했습니다.");
 					$('#seedText').val('');
+					$(".rating-clear").click();
 					loadSeeds(id);
 				}
 			},

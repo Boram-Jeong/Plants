@@ -10,6 +10,7 @@
 <title>Tizen Web IDE - Tizen - jQuery Mobile - Single-Page</title>
 
 <script type="text/javascript" src="../js/jquery-1.9.1.js"></script>
+<script src="../js/bootstrap-rating-input.min.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
 
 <link rel="stylesheet" href="../css/search_information.css" />
@@ -17,8 +18,8 @@
 
 <link rel="stylesheet" href="../libs/css/bootstrap.min.css" />
 <script type="text/javascript" src="../libs/js/bootstrap.min.js"></script>
-
 <link rel="stylesheet" href="../css/style.css" />
+
 </head>
 
 <body>
@@ -42,6 +43,7 @@
          </div>
          
          <div id="write_comment">
+       		  <input type="number" id="seedRate" data-min="1" data-max="5"  class="rating" data-clearable="remove" />
             <span class="glyphicon glyphicon-camera" id="writePic"></span>
             <input type="text" id="seedText" >
             <button type="button" class="btn btn-default" id="writeSeed">시드 쓰기</button>
