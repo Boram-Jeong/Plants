@@ -1,44 +1,6 @@
 
 var searchList;
 
-function initSearchList(searchData){
-	searchList = searchData;
-
-	var myLatlng = new google.maps.LatLng(37.508952, 127.061016);
-	
-    var mapOptions = {
-      center: myLatlng,
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    var map = new google.maps.Map(document.getElementById("map_canvas"),
-        mapOptions);
-    
-    make_marker(myLatlng, map, "Here I am", "My Space!", 0);
-    //시간차로 마커 떨구기 소스
-    //for (var i =0; i < searchList.length;i++) {
-    var i = 0;
-	function drop()
-	{
-		if(i > searchList.length)
-			return;
-		
-		var latlng = new google.maps.LatLng(searchList[i].lat, searchList[i].lng);
-		var name = searchList[i].name;
-		var address = searchList[i].address;
-		var cate = searchList[i].cate;
-		i++;
-		var speed = i*60;
-		if(speed>250)
-			speed = 250;
-		make_marker(latlng, map, name, address, cate);
-    	setTimeout(function() {
-    		drop();
-    	}, speed)
-	}
-	drop();
-}
-
 function initialize() {
 	var myLatlng = new google.maps.LatLng(37.508952, 127.061016);
 	
@@ -96,6 +58,7 @@ function initialize() {
 function makeMakersbyTag(searchData)
 {
 	console.log(searchData);
+	
 	var myLatlng = new google.maps.LatLng(37.508952, 127.061016);
 	
     var mapOptions = {
@@ -107,7 +70,7 @@ function makeMakersbyTag(searchData)
         mapOptions);
     
 	searchList = searchData;
-	console.log(searchList.length);
+
 	make_marker(myLatlng, map, "Here I am", "My Space!", 0);
     //시간차로 마커 떨구기 소스
     //for (var i =0; i < searchList.length;i++) {
