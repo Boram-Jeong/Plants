@@ -175,6 +175,31 @@
 	});
 	
 });
- 
 
+ 
+ function favoriteInit() {
+ 	var firstCheck = localStorage.getItem("firstCheck");
+ 	if (firstCheck != "1") {
+ 		localStorage.setItem("favorite1", "카페");
+ 		localStorage.setItem("favorite2", "영화관");
+ 		localStorage.setItem("favorite3", "바(bar)");
+ 		localStorage.setItem("favorite4", "음식점");
+ 	}
+ 	var favorite1 = localStorage.getItem("favorite1");
+ 	var favorite2 = localStorage.getItem("favorite2");
+ 	var favorite3 = localStorage.getItem("favorite3");
+ 	var favorite4 = localStorage.getItem("favorite4");
+ 	
+ 	$('#cate1').text(favorite1);
+ 	$('#cate2').text(favorite2);
+ 	$('#cate3').text(favorite3);
+ 	$('#cate4').text(favorite4);
+ 	
+ 	localStorage.setItem("firstCheck", "1");
+ }
+ 
+ function init() {
+	 favoriteInit();
+	 initialize();	 
+ }
 
