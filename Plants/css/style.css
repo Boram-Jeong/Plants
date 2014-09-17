@@ -14,3 +14,8 @@
 	font-size: 18pt;
 	font-style: bold;
 }
+
+#filtering_title {
+	width: 60%;
+	text-align: left;
+}

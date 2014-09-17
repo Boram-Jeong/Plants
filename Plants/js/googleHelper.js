@@ -50,6 +50,43 @@ function initialize() {
 	});
 }
 
+function makeMakersbyTag(searchData)
+{
+	var myLatlng = new google.maps.LatLng(37.508952, 127.061016);
+	
+    var mapOptions = {
+      center: myLatlng,
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map_canvas"),
+        mapOptions);
+    
+	searchList = searchData;
+	
+	make_marker(myLatlng, map, "Here I am", "My Space!", 0);
+    //시간차로 마커 떨구기 소스
+    //for (var i =0; i < searchList.length;i++) {
+    var i = 0;
+	function drop()
+	{
+		if(i > searchList.length)
+			return;
+		
+		var latlng = new google.maps.LatLng(searchList[i].lat, searchList[i].lng);
+		var name = searchList[i].name;
+		i++;
+		var speed = i*60;
+		if(speed>250)
+			speed = 250;
+		
+		make_marker(latlng, map, name,searchList[i].address, searchList[i].cate);
+    	setTimeout(function() {
+    		drop();
+    	}, speed)
+	}
+	drop();
+}
 
 function load_MiniMap(_lat, _lng)
 {
@@ -85,7 +122,7 @@ function make_marker(_latlng, _map, _title, _content, _cate)
 		marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue.png');
 	else if(_cate === 'bar'|| _cate === 'night_club')
 		marker.setIcon('http://maps.google.com/mapfiles/ms/icons/yellow.png');
-	else
+	else if(_cate != 0)
 		marker.setIcon('http://maps.google.com/mapfiles/ms/icons/yellow.png');
 	
     make_maker_content(marker, _map);

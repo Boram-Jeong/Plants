@@ -86,7 +86,7 @@
 			type : 'get',
 			dataType : 'json',
 			success : function(result) {
-				
+				makeMakersbyTag(result);
 			},
 			error : function(e) {
 				console.log(e.responseText);
@@ -108,6 +108,9 @@
 				url : url,
 				type : 'get',
 				dataType : 'json',
+				success : function(result) {
+					makeMakersbyTag(result);
+				},
 				error : function(e) {
 					console.log(e.responseText);
 				}
@@ -128,6 +131,9 @@
 				url : url,
 				type : 'get',
 				dataType : 'json',
+				success : function(result) {
+					makeMakersbyTag(result);
+				},
 				error : function(e) {
 					console.log(e.responseText);
 				}
@@ -148,6 +154,9 @@
 				url : url,
 				type : 'get',
 				dataType : 'json',
+				success : function(result) {
+					makeMakersbyTag(result);
+				},
 				error : function(e) {
 					console.log(e.responseText);
 				}
