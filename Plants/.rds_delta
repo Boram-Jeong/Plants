@@ -3,8 +3,6 @@
 #modify
 res/wgt/author-signature.xml
 res/wgt/css/index.css
-res/wgt/css/style.css
-res/wgt/index.html
-res/wgt/js/splash.js
+res/wgt/js/googleHelper.js
+res/wgt/js/index.js
 res/wgt/signature1.xml
-res/wgt/view/change_category.html

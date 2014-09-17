@@ -1,8 +1,8 @@
 $(document)
 		.ready(
 				function() {
-					console.log('onload');
-
+					//console.log('onload');
+					
 					var searchList;
 					var selectedIndex;
 
@@ -15,6 +15,7 @@ $(document)
 						type : 'get',
 						dataType : 'json',
 						success : function(result) {
+							makeMakersbyTag(result);
 							searchList = result;
 							for ( var idx = 0; idx < result.length; idx++) {
 								$('#searchList').append(

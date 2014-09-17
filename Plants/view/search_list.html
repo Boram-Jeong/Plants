@@ -16,8 +16,14 @@
 <script type="text/javascript" src="../libs/js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" href="../css/style.css" />
+<link rel="stylesheet" href="../css/search_list.css" />
 
 <script type="text/javascript" src="../js/search_list.js"></script>
+<script type="text/javascript" src="../js/googleHelper.js"></script>
+<script type="text/javascript"
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDLR3MFRGTEpCwdp97Wxot6n6_Iv1oOEJk&sensor=true">
+    </script>
+
 </head>
 
 <body>
@@ -28,6 +34,10 @@
 		<!-- /header -->
 
 		<div id="content">
+			<div id="map_canvas" class="clearfix">
+            <span>미니 맵</span>
+         	</div>
+         	
 			<ul class="list-group" id="searchList">
 			</ul>
 		</div>
