@@ -5,5 +5,5 @@ jQuery(document).ready(function(){
 		 $("body").fadeOut(500);
 		window.location.href = "../index.html";
 		//$("body").fadeOut(1000);
-    }, 3000);  
+    }, 2000);  
 });
