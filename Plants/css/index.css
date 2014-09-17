@@ -38,11 +38,9 @@ body {
 
 #categoryButtonGroup {
 	position: absolute;
-	margin-top: 10px;
-	margin-left: 123px; float : right;
-	display: block;
-	z-index: 1;
-	float: right;
+	margin-top: 500px;
+	margin-left: 10px; 
+	z-index: 20;
 }
 
 #header #title {
