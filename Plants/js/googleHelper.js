@@ -45,6 +45,18 @@ function initialize() {
 }
 
 
+function load_MiniMap(_lat, _lng)
+{
+	var myLatlng = new google.maps.LatLng(_lat, _lng);
+		
+	    var mapOptions = {
+	      center: myLatlng,
+	      zoom: 15,
+	      mapTypeId: google.maps.MapTypeId.ROADMAP
+	    };
+	    var map = new google.maps.Map(document.getElementById("map_canvas"),
+	        mapOptions);
+}
 
 // color : red(0), blue(1), green(2)
 function make_marker(_latlng, _map, _title, _color)
