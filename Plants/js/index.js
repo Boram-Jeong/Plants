@@ -174,6 +174,11 @@
 		window.location.href = "./view/option.html";
 	});
 	
+	$('#filter_page').click(function() {
+		window.location.href = "../view/filtering.html";
+	});
+	
+	
 });
 
  
