@@ -32,6 +32,8 @@ $(document).ready(function() {
 
 	var id = parameter[0].split('=')[1];
 	var name = decodeURI(parameter[1].split('=')[1]);
+	var lat = parameter[2].split('=')[1];
+	var lng = parameter[3].split('=')[1];
 	var address = decodeURI(parameter[5].split('=')[1]);
 	var rate = parameter[6].split('=')[1];
 
@@ -41,17 +43,21 @@ $(document).ready(function() {
 	$('#cafe_information').append(address + '<br>');
 	$('#cafe_information').append(rate);
 
+	// load seed
 	loadSeeds(id);
+	
+	// load map
+	console.log('lat: ' + lat + ', lng: ' + lng);
+	
+	load_MiniMap(lat, lng);
 	
 	$(function(){
 	    $('#seedRate').on('change', function(){
-//	      alert("Changed: " + $(this).val())
 	      seedRate = $(this).val();
 	    });
 	  });
 	
 	$('#writeSeed').click(function() {
-		// console.log($('#seedText').val());
 		var seedText = $('#seedText').val();
 
 		if (seedText === '') {
