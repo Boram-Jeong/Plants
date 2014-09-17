@@ -43,6 +43,19 @@ body {
 	z-index: 20;
 }
 
+#cate1 {
+	background-color: #ff1010;
+}
+#cate2 {
+	background-color: #33cc66;
+}
+#cate3 {
+	background-color: #3366ff;
+}
+#cate4 {
+	background-color: #ffff66;
+}
+
 #header #title {
 	margin-left: 34px;
 }
