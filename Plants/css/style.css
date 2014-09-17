@@ -14,8 +14,17 @@
 	font-size: 18pt;
 	font-style: bold;
 }
-
+.margin-2px{
+	margin-left: 10px;
+}
 #filtering_title {
 	width: 60%;
 	text-align: left;
+}
+#save_favorite {
+	margin-top : 170px;
+	margin-left: 230px;
+}
+#cancle_favorite {
+	margin-top: 170px;
 }
