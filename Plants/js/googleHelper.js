@@ -35,11 +35,16 @@ function initialize() {
 	    		
 	    		var latlng = new google.maps.LatLng(searchList[i].lat, searchList[i].lng);
 	    		var name = searchList[i].name;
+	    		var address = searchList[i].address;
+	    		var cate = searchList[i].cate;
 	    		i++;
-	    		make_marker(latlng, map, name,searchList[i].address, searchList[i].cate);
+	    		var speed = i*60;
+	    		if(speed>250)
+	    			speed = 250;
+	    		make_marker(latlng, map, name, address, cate);
 		    	setTimeout(function() {
 		    		drop();
-		    	}, i*80)
+		    	}, speed)
 	    	}
     		drop();
 		   // }
@@ -75,12 +80,14 @@ function makeMakersbyTag(searchData)
 		
 		var latlng = new google.maps.LatLng(searchList[i].lat, searchList[i].lng);
 		var name = searchList[i].name;
+		var address = searchList[i].address;
+		var cate = searchList[i].cate;
 		i++;
 		var speed = i*60;
 		if(speed>250)
 			speed = 250;
 		
-		make_marker(latlng, map, name,searchList[i].address, searchList[i].cate);
+		make_marker(latlng, map, name,address, cate);
     	setTimeout(function() {
     		drop();
     	}, speed)
@@ -99,6 +106,13 @@ function load_MiniMap(_lat, _lng)
 	    };
 	    var map = new google.maps.Map(document.getElementById("map_canvas"),
 	        mapOptions);
+	    
+	    var marker = new google.maps.Marker({
+	        position: myLatlng,
+	        map: map,
+	        title:'',
+	        animation: google.maps.Animation.DROP,
+	    });
 }
 
 
@@ -116,7 +130,7 @@ function make_marker(_latlng, _map, _title, _content, _cate)
 	
 	if(_cate === 'food' || _cate === 'restaurant' || _cate === 'bakery')
 		marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red.png');
-	else if(_cate === 'movie_theater' || _cate == 'bank')
+	else if(_cate === 'movie_theater' || _cate === 'bank')
 		marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green.png');
 	else if(_cate === 'cafe')
 		marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue.png');
@@ -172,7 +186,7 @@ function select()
 
 	var selected = searchList[selectedIndex];
 
-	console.log(selected);
+//	console.log(selected);
 
 	var url = "./view/search_information.html?id="
 			+ selected.id
@@ -189,7 +203,7 @@ function select()
 			+ "&rate="
 			+ selected.rate;
 
-	console.log(url);
+//	console.log(url);
 
 	window.location.href = url;
 }
